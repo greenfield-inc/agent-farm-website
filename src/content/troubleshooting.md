@@ -23,7 +23,7 @@ command -v claude
 command -v codex
 ```
 
-Use Node.js 22.15 or later. Add `~/.local/bin` to `PATH` and keep the Agent Farm source checkout that your symlink points to. Install and authenticate the native harness selected by your profile.
+Use Node.js 22.15 or later. If `command -v agent-farm` prints nothing, install it with `npm install -g @greenfieldco/agent-farm` and make sure npm’s global `bin` directory, `$(npm prefix -g)/bin`, is on your `PATH`. Install and authenticate the native harness selected by your profile.
 
 ## Resolve a profile or skill
 
