@@ -1880,33 +1880,12 @@ code {
   color: #9ab88a;
   pointer-events: none;
 }
-.install-guide summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 12px 0;
-  font-size: 13px;
-  color: #edc362;
-  list-style: none;
-}
-.install-guide summary::-webkit-details-marker {
-  display: none;
-}
-.install-guide[open] summary span {
-  transform: rotate(45deg);
-}
-.install-guide-content {
-  display: grid;
-  gap: 16px;
-  padding-top: 12px;
-}
-.install-guide-content > p {
+.session-note {
   color: #c4cdc4;
   font-size: 12px;
   line-height: 1.8;
 }
-.install-guide-content .text-link {
+.session-note .text-link {
   color: #edc362;
   font-size: 12px;
 }

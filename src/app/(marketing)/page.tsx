@@ -1,5 +1,6 @@
 import Image from "next/image";
 import imageAssets from "@/components/landing/image-assets.json";
+import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { FieldLines } from "@/components/landing/artwork";
 import { GardenMotion } from "@/components/landing/garden-motion";
@@ -21,11 +22,7 @@ export const metadata = pageMetadata(
 
 const repository = "https://github.com/dcouple/agent-farm";
 
-const install = `git clone https://github.com/dcouple/agent-farm.git
-cd agent-farm
-pnpm install --frozen-lockfile && pnpm build
-mkdir -p ~/.local/bin
-ln -s "$PWD/dist/cli.js" ~/.local/bin/agent-farm`;
+const install = "npm install -g @greenfieldco/agent-farm";
 const blocks = [
   ["Profile", "a saved setup"],
   ["Agent", "the worker"],
@@ -190,32 +187,19 @@ export default function Home() {
                 </p>
               </div>
               <div className="session-commands">
-                <p className="session-caption">After installation</p>
+                <CodeBlock code={install} title="Install" />
                 <CodeBlock code="agent-farm init" title="Set up once" />
                 <CodeBlock
-                  code="agent-farm"
-                  title="Pick a profile and launch"
+                  code="agent-farm run greenfield/orchestrator"
+                  title="Start with the orchestrator"
                 />
-                <details className="install-guide">
-                  <summary>
-                    Install from source <span aria-hidden="true">+</span>
-                  </summary>
-                  <div className="install-guide-content">
-                    <p>
-                      Requires Node.js 22.15+, pnpm, macOS or Linux, and an
-                      authenticated Claude Code or Codex CLI.
-                    </p>
-                    <CodeBlock code={install} title="Install Agent Farm" />
-                    <p>
-                      Add <code>~/.local/bin</code> to your shell’s{" "}
-                      <code>PATH</code>, then run <code>agent-farm init</code>.
-                    </p>
-                    <a href={`${repository}#install`} className="text-link">
-                      Full installation guide{" "}
-                      <ArrowUpRight size={14} aria-hidden="true" />
-                    </a>
-                  </div>
-                </details>
+                <p className="session-note">
+                  Requires Node.js 22.15+, macOS or Linux, and an authenticated
+                  Claude Code or Codex CLI.{" "}
+                  <Link href="/docs/getting-started" className="text-link">
+                    Get started guide <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </p>
               </div>
             </div>
           </section>
