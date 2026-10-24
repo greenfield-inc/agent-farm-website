@@ -1,3 +1,20 @@
+# Current visual review
+
+**Parsa selected B — Keep your terminal.**
+
+[Watch the current review and saved choices](https://og-motion-review-parsa.sleekhen8.chatgpt.site/#farm) · [What changed this pass](https://og-motion-review-parsa.sleekhen8.chatgpt.site/iteration-three.html)
+
+The selected B receives only a narrow polish: eased profile selection, slightly larger status text, synchronized cursor blink, and a clean terminal-only loop reset. The original selected B remains byte-identical and is playable for comparison.
+
+
+
+The review Site versions the portable renderers, fonts/licenses, assets, clips and selection records at source commit `f56a530be9e9d3fd2a3c0496cf0229acfc16be30`. Public reference artwork was not copied into the output. Workflows and artifact contents are illustrative. Media is silent H.264/yuv420p at 1200 × 630 and 24 fps, with faststart. New Grain and polished Agent Farm clips passed full-decode/format/loop checks; browser QA verified video playback and the four saved selections.
+
+The original video files under this repository's review-tools directory are the superseded first-round archive. Production metadata and current image fallbacks have not changed in this design draft. Final implementation and live-client unfurl checks remain separate work.
+
+<details>
+<summary>Earlier review notes and round-one source</summary>
+
 ## Round two — current review
 
 [Watch all three revised videos on the phone-friendly review Site](https://og-motion-review-parsa.sleekhen8.chatgpt.site/#farm). The page includes the actual current still for comparison and [the full AI visual-designer critique](https://og-motion-review-parsa.sleekhen8.chatgpt.site/critique.html#farm).
@@ -51,3 +68,5 @@ After a direction is chosen, add a direct absolute HTTPS MP4 URL through `og:vid
 No JavaScript is needed for crawlers. Serve media without authentication or expiring URLs, with a video content type and byte-range support. Video playback and autoplay are controlled by the receiving client; not every platform supports them. Validate actual iMessage unfurls and image-only clients after the chosen change is deployed. Private page content must never be baked into a public asset.
 
 References: [example post](https://x.com/jedbridges/status/2113709199599489527), [Open Graph protocol](https://ogp.me/), [Apple rich preview guidance](https://developer.apple.com/documentation/technotes/tn3156-create-rich-previews-for-messages).
+
+</details>
