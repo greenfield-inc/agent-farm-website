@@ -44,6 +44,19 @@
             "value": "text/markdown; charset=utf-8"
           }
         ]
+      },
+      {
+        "source": "/og/agent-farm-b2b3106810c2.mp4",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "video/mp4"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
       }
     ]
   }

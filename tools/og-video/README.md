@@ -1,72 +1,21 @@
-# Current visual review
+# Open Graph video
 
-**Parsa selected B — Keep your terminal.**
+Selected: **B — Keep your terminal**. The MP4 in `../../public/og/` is the exact approved review clip; `selected.json` records its SHA-256 and public URL.
 
-[Watch the current review and saved choices](https://og-motion-review-parsa.sleekhen8.chatgpt.site/#farm) · [What changed this pass](https://og-motion-review-parsa.sleekhen8.chatgpt.site/iteration-three.html)
+[Watch the approved selection](https://og-motion-review-parsa.sleekhen8.chatgpt.site/#farm). The review Site retains all earlier rounds and the portable renderers, assets and font licenses in its source repository (`source/round-two` and `source/round-three`, source commit `f56a530be9e9d3fd2a3c0496cf0229acfc16be30`). Superseded first-round files were removed from this PR.
 
-The selected B receives only a narrow polish: eased profile selection, slightly larger status text, synchronized cursor blink, and a clean terminal-only loop reset. The original selected B remains byte-identical and is playable for comparison.
+## Verify
 
-
-
-The review Site versions the portable renderers, fonts/licenses, assets, clips and selection records at source commit `f56a530be9e9d3fd2a3c0496cf0229acfc16be30`. Public reference artwork was not copied into the output. Workflows and artifact contents are illustrative. Media is silent H.264/yuv420p at 1200 × 630 and 24 fps, with faststart. New Grain and polished Agent Farm clips passed full-decode/format/loop checks; browser QA verified video playback and the four saved selections.
-
-The original video files under this repository's review-tools directory are the superseded first-round archive. Production metadata and current image fallbacks have not changed in this design draft. Final implementation and live-client unfurl checks remain separate work.
-
-<details>
-<summary>Earlier review notes and round-one source</summary>
-
-## Round two — current review
-
-[Watch all three revised videos on the phone-friendly review Site](https://og-motion-review-parsa.sleekhen8.chatgpt.site/#farm). The page includes the actual current still for comparison and [the full AI visual-designer critique](https://og-motion-review-parsa.sleekhen8.chatgpt.site/critique.html#farm).
-
-The old clips ignored the approved pixel workbench and weakened the still’s large forest-and-gold typography. Generic switches did not explain configuration.
-
-Use the original type treatment and approved workbench. Show a profile being selected, a setup reaching the native terminal, or the workbench becoming ready.
-
-- **A — Choose your setup:** The approved pixel workbench wakes up as you select a profile and prepare your terminal.
-- **B — Keep your terminal:** A readable launch sequence moves from a chosen profile into a native terminal session.
-- **C — The workbench connects:** Four setup placards send a signal down their existing gold cables to activate the monitor.
-
-The three new MP4s are 1200 × 630, 24 fps, 8 seconds, silent H.264/yuv420p with faststart. Media format checks and visual frame reviews passed. These are illustrative concepts, not recordings of private app data. The new portable renderers, fonts, assets and videos are versioned with the review Site (source commit `77103477efa59be166d6abc29eadeef54fbf0f44`).
-
-The files below in this repository are the **superseded round-one archive**, retained for history; do not select or ship them. Parsa must choose A/B/C from **round two** before final production metadata implementation.
-
----
-
-# Agent Farm Open Graph video studio
-
-Three playable visual directions for review. This folder is outside the app's served assets and has no runtime imports. No production Open Graph metadata changes in this draft.
-
-## Review
-
-Use the individual MP4 and poster links in the PR, or open `previews/index.html` from a downloaded checkout. The gallery uses native video controls, does not autoplay, and contains no JavaScript. `previews/comparison.gif` is an animated overview; the MP4s are the proposed delivery format.
-
-- **A: Growing mark** — The existing farm mark moves within a quiet orbit.
-- **B: Your configuration** — Profile, skill and workspace cards animate together.
-- **C: The workbench** — Four building blocks form a living configuration.
-
-The workflow illustrations are synthetic. They are not recordings or pixel-exact reproductions of the app. Concepts use bundled, licensed DejaVu subsets for deterministic offline rendering; final typography should match the website's own fonts.
-
-## Rebuild
-
-Use Python 3.10+, FFmpeg/FFprobe with libx264, and the pinned Pillow requirement. From this folder:
+With Python 3, FFmpeg and FFprobe installed, run from this directory:
 
 ```sh
-python -m pip install -r requirements.txt
-python render.py
-python verify.py
+python3 verify-selected.py
 ```
 
-`render.py --stills` only renders posters. The renderer creates 1200 × 630, 24 fps, six-second H.264/yuv420p MP4s with faststart and no audio. Verification checks codec, dimensions, duration, frame count, no audio, faststart, byte budget, actual motion and the loop boundary. Render inputs are `config.json`, `assets/mark.png` and `fonts/`. `assets/source.svg`, where present, preserves the inspected source mark. It can be rasterized to regenerate the PNG with any SVG renderer; do not redraw the brand mark.
+The check verifies the exact selected bytes, a single silent H.264/yuv420p stream, dimensions, frame rate, duration, faststart and a full decode. This is an illustrative brand animation, not a recording of private app data.
 
-The comparison GIF is generated by the same render command after encoding the clips. The regular `previews/index.html` always references the latest local videos. Review output stays outside the production bundle.
+## Delivery
 
-## Delivery contract
+Metadata uses an absolute HTTPS MP4 URL with secure URL, MIME type and dimensions. Page titles, descriptions, canonical URLs, website/article types, existing Open Graph images and Twitter summary-image cards stay intact. Receiving apps choose whether to animate; image-only clients continue to use the existing still.
 
-After a direction is chosen, add a direct absolute HTTPS MP4 URL through `og:video`, `og:video:secure_url`, `og:video:type` (`video/mp4`), width and height. Retain page-specific titles, descriptions, canonical URLs, `og:type`, static image fallbacks and Twitter summary cards. Adding an MP4 does not require changing a website or article into `video.other`.
-
-No JavaScript is needed for crawlers. Serve media without authentication or expiring URLs, with a video content type and byte-range support. Video playback and autoplay are controlled by the receiving client; not every platform supports them. Validate actual iMessage unfurls and image-only clients after the chosen change is deployed. Private page content must never be baked into a public asset.
-
-References: [example post](https://x.com/jedbridges/status/2113709199599489527), [Open Graph protocol](https://ogp.me/), [Apple rich preview guidance](https://developer.apple.com/documentation/technotes/tn3156-create-rich-previews-for-messages).
-
-</details>
+The content-addressed filename avoids stale video caches. Replace the filename and metadata URL together when changing the clip. After deploying, verify the public URL without cookies (200 GET/HEAD, video/mp4, byte-range playback and cache headers), then test an actual message unfurl. These production/client checks cannot be completed before the app is deployed.

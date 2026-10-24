@@ -1,3 +1,4 @@
+import { OG_VIDEOS } from "@/lib/og-video";
 import type { Metadata } from "next";
 
 export const siteUrl = "https://getagentfarm.com";
@@ -25,6 +26,7 @@ export function pageMetadata(
       types: { "text/markdown": `/raw/${path === "/" ? "index" : path.slice(1)}.md` },
     },
     openGraph: {
+      videos: OG_VIDEOS,
       title: `${title} | Agent Farm`,
       description,
       url: path,
