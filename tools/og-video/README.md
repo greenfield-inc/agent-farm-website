@@ -1,3 +1,21 @@
+## Round two — current review
+
+[Watch all three revised videos on the phone-friendly review Site](https://og-motion-review-parsa.sleekhen8.chatgpt.site/#farm). The page includes the actual current still for comparison and [the full AI visual-designer critique](https://og-motion-review-parsa.sleekhen8.chatgpt.site/critique.html#farm).
+
+The old clips ignored the approved pixel workbench and weakened the still’s large forest-and-gold typography. Generic switches did not explain configuration.
+
+Use the original type treatment and approved workbench. Show a profile being selected, a setup reaching the native terminal, or the workbench becoming ready.
+
+- **A — Choose your setup:** The approved pixel workbench wakes up as you select a profile and prepare your terminal.
+- **B — Keep your terminal:** A readable launch sequence moves from a chosen profile into a native terminal session.
+- **C — The workbench connects:** Four setup placards send a signal down their existing gold cables to activate the monitor.
+
+The three new MP4s are 1200 × 630, 24 fps, 8 seconds, silent H.264/yuv420p with faststart. Media format checks and visual frame reviews passed. These are illustrative concepts, not recordings of private app data. The new portable renderers, fonts, assets and videos are versioned with the review Site (source commit `77103477efa59be166d6abc29eadeef54fbf0f44`).
+
+The files below in this repository are the **superseded round-one archive**, retained for history; do not select or ship them. Parsa must choose A/B/C from **round two** before final production metadata implementation.
+
+---
+
 # Agent Farm Open Graph video studio
 
 Three playable visual directions for review. This folder is outside the app's served assets and has no runtime imports. No production Open Graph metadata changes in this draft.
