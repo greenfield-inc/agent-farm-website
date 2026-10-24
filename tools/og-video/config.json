@@ -1,0 +1,73 @@
+{
+  "key": "farm",
+  "name": "Agent Farm",
+  "domain": "getagentfarm.com",
+  "background": "#183c32",
+  "ink": "#f8f5ed",
+  "accent": "#f3bf50",
+  "muted": "#d2dec8",
+  "panel": "#183c32",
+  "surface": "#f8f5ed",
+  "panel_ink": "#1c302e",
+  "tile_ink": "#1c302e",
+  "eyebrow": "Keep your native terminal",
+  "headline": [
+    "Your agents.",
+    "Your setup."
+  ],
+  "headline_size": 76,
+  "subline": "Claude Code & Codex. Your native terminal.",
+  "footer": "Profiles, shared skills and workspace connections",
+  "scene": "profiles",
+  "workflow_title": "A setup you can make your own.",
+  "rows": [
+    "Your defaults",
+    "Shared instructions",
+    "Connected tools"
+  ],
+  "workflow_footer": "Illustrative configuration cards",
+  "features": [
+    "Profiles",
+    "Skills",
+    "Workspaces",
+    "Agents"
+  ],
+  "icons": [
+    "file",
+    "check",
+    "grid",
+    "terminal"
+  ],
+  "feature_headline": [
+    "A little setup.",
+    "Room to grow."
+  ],
+  "feature_subline": "Save the way you like to work.",
+  "feature_footer": "Claude Code & Codex. Your native terminal.",
+  "options": [
+    {
+      "name": "Growing mark",
+      "description": "The existing farm mark moves within a quiet orbit.",
+      "caption": [
+        "Forest green, warm paper and gold.",
+        "A restrained extension of the site."
+      ]
+    },
+    {
+      "name": "Your configuration",
+      "description": "Profile, skill and workspace cards animate together.",
+      "caption": [
+        "An illustrative configuration flow.",
+        "Shows what the product organizes."
+      ]
+    },
+    {
+      "name": "The workbench",
+      "description": "Four building blocks form a living configuration.",
+      "caption": [
+        "Profiles, skills, workspaces and agents.",
+        "A modular feature-led direction."
+      ]
+    }
+  ]
+}
